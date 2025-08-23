@@ -185,7 +185,6 @@ with statistics:
         
         
     BASE_URL ="http://127.0.0.1:8000"
-# Collect params only if forms are submitted
     params = {}
     url = f"{BASE_URL}/stats/"
     try:
