@@ -37,6 +37,23 @@ def filter_patient(
 # Ensuite faire appel à ces fonctions dans le fichier api.py où sont définies les routes.
 
 # Ajouter les fonctions de filtrage pour les autres routes.
+def get_patient_by_id(patient_id: int):
+    df = stroke_data_df.copy()
+    if 0 <= patient_id < len(df):
+        return df.iloc[patient_id].to_dict()
+    else:
+        return None
+#stats 
+def get_statistics():
+    df = stroke_data_df.copy()
+    stats = {
+        "total_patients": len(df),
+        "average_age": round(df["age"].mean(), 2),
+        "stroke_rate": round(df["stroke"].mean() * 100, 2),  # en %
+        "gender_distribution": df["gender"].value_counts().to_dict()
+    }
+    return stats
+
 
 
 
