@@ -1,7 +1,8 @@
-# streamlit_app/app.py
 import streamlit as st
-from pages import accueil, donnees, visualisations, statistiques
+from Pages import accueil, donnees, visualisations, statistiques
+from api import get_patients, get_stats
 
+# Configuration de la page
 st.set_page_config(page_title="Dashboard AVC", layout="wide")
 
 # Sidebar pour les filtres globaux
@@ -15,12 +16,19 @@ if gender: params["gender"] = gender
 if stroke != "": params["stroke"] = stroke
 if max_age is not None: params["max_age"] = max_age
 
-# Onglets
+# Création des onglets
 Accueil, Données, Visualisations, Statistiques = st.tabs(
     ["Accueil", "Données", "Visualisations", "Statistiques"]
 )
 
-with Accueil: accueil.show()
-with Données: donnees.show(params)
-with Visualisations: visualisations.show(params)
-with Statistiques: statistiques.show()
+# Affichage de chaque onglet via sa fonction show()
+with Accueil: 
+    accueil.show() 
+with Données:
+    donnees.show(params)
+
+with Visualisations:
+    visualisations.show(params)
+
+with Statistiques:
+    statistiques.show()

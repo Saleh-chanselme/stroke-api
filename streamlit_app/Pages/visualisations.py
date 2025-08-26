@@ -7,6 +7,8 @@ def show(params):
     st.subheader("Visualisations")
     try:
         data = get_patients(params)
+        st.write("Colonnes disponibles :", data.columns.tolist())
+        st.write("Aperçu des données :", data.head())
         if data.empty:
             st.info("Aucune donnée à afficher.")
             return
@@ -38,6 +40,8 @@ def show(params):
         # Pie chart Fumeurs vs Non-fumeurs
         st.markdown("### Fumeurs vs Non-fumeurs parmi les patients ayant eu un AVC")
         stroke_df = data[data['stroke'] == 1]
+        st.write("Patients ayant eu un AVC :", len(stroke_df))
+        st.write(stroke_df[['gender', 'smoking_status']].head())
         stroke_smoking_counts = stroke_df['smoking_status'].apply(
             lambda x: 'Fumeur' if x != 'never smoked' else 'Non-fumeur'
         ).value_counts()

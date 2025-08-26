@@ -11,3 +11,4 @@ def show():
     - Explorer les statistiques liées aux AVC.
     - Fournir un outil d’aide à la décision médicale.
     """)
+show()
