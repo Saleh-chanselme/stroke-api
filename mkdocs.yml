@@ -1,0 +1,15 @@
+site_name: Stroke Prediction Dashboard
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true   # Montre le code source de la fonction
+
+nav:
+  - Accueil: index.md
+  - API Client: api_client.md
