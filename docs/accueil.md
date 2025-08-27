@@ -18,7 +18,7 @@ Cette application permet de visualiser et d’analyser des données liées aux a
 1. Cloner le dépôt :
 
 ```bash
-git clone https://github.com/ton-utilisateur/stroke-api.git
+git clone https://github.com/Saleh-chanselme/stroke-api
 cd stroke-api
 
 

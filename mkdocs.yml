@@ -1,15 +1,14 @@
 site_name: Stroke Prediction Dashboard
-theme:
-  name: material
+site_description: Documentation du projet de prédiction d'AVC avec FastAPI et Streamlit
+site_author: Chaima
+repo_url: https://github.com/Saleh-chanselme/stroke-api/tree/chaima  
+repo_name: GitHub
 
-plugins:
-  - search
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            show_source: true   # Montre le code source de la fonction
 
 nav:
-  - Accueil: index.md
+  - Accueil: accueil.md
   - API Client: api_client.md
+  - APP: app.md
+
+plugins:
+  - mkdocstrings
